@@ -6,10 +6,10 @@ import { Menu, X, Terminal } from "lucide-react";
 import { siteConfig } from "@/lib/config";
 
 const navLinks = [
-  { href: "#experience", label: "Experience" },
   { href: "#projects", label: "Projects" },
+  { href: "#experience", label: "Experience" },
   { href: "#skills", label: "Skills" },
-  { href: "#github", label: "GitHub" },
+  { href: "#certifications", label: "Certifications" },
   { href: "#contact", label: "Contact" },
 ];
 

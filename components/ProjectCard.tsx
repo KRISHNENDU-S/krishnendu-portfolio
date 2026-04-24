@@ -1,4 +1,4 @@
-import { ExternalLink, Github, BookOpen, Star } from "lucide-react";
+import { ExternalLink, BookOpen, Star } from "lucide-react";
 import { Project } from "@/lib/projects";
 import { cn } from "@/lib/utils";
 
@@ -14,6 +14,8 @@ const categoryColors: Record<Project["category"], string> = {
 };
 
 export default function ProjectCard({ project }: ProjectCardProps) {
+  const hasLinks = project.publicationUrl || project.liveUrl;
+
   return (
     <article
       className={cn(
@@ -61,45 +63,36 @@ export default function ProjectCard({ project }: ProjectCardProps) {
         ))}
       </div>
 
-      {/* Links */}
-      <div className="flex items-center gap-3 mt-auto pt-4 border-t border-bg-border flex-wrap">
-        <a
-          href={project.githubUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="flex items-center gap-1.5 text-xs font-mono text-text-secondary hover:text-text-primary transition-colors"
-          aria-label={`View ${project.title} on GitHub`}
-        >
-          <Github size={13} />
-          <span>Code</span>
-        </a>
+      {/* Links — only IEEE paper and Live Demo, no Code link */}
+      {hasLinks && (
+        <div className="flex items-center gap-3 mt-auto pt-4 border-t border-bg-border flex-wrap">
+          {project.publicationUrl && (
+            <a
+              href={project.publicationUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-1.5 text-xs font-mono text-violet-400 hover:text-violet-300 transition-colors"
+              aria-label={`Read ${project.title} IEEE publication`}
+            >
+              <BookOpen size={13} />
+              <span>IEEE Paper</span>
+            </a>
+          )}
 
-        {project.publicationUrl && (
-          <a
-            href={project.publicationUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-1.5 text-xs font-mono text-violet-400 hover:text-violet-300 transition-colors"
-            aria-label={`Read ${project.title} IEEE publication`}
-          >
-            <BookOpen size={13} />
-            <span>IEEE Paper</span>
-          </a>
-        )}
-
-        {project.liveUrl && (
-          <a
-            href={project.liveUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-1.5 text-xs font-mono text-accent-secondary hover:text-accent-primary transition-colors ml-auto"
-            aria-label={`View ${project.title} live demo`}
-          >
-            <span>Live Demo</span>
-            <ExternalLink size={11} />
-          </a>
-        )}
-      </div>
+          {project.liveUrl && (
+            <a
+              href={project.liveUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-1.5 text-xs font-mono text-accent-secondary hover:text-accent-primary transition-colors ml-auto"
+              aria-label={`View ${project.title} live demo`}
+            >
+              <span>Live Demo</span>
+              <ExternalLink size={11} />
+            </a>
+          )}
+        </div>
+      )}
     </article>
   );
 }
