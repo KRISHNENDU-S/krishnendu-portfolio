@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { Github, Linkedin, Mail, Terminal, Code2 } from "lucide-react";
 import { siteConfig } from "@/lib/config";
 

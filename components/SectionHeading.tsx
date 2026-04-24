@@ -12,7 +12,7 @@ export default function SectionHeading({
   return (
     <div className="mb-14">
       <p className="font-mono text-xs text-accent-primary uppercase tracking-widest mb-3">
-        // {label}
+        {`// ${label}`}
       </p>
       <h2 className="font-display font-bold text-3xl md:text-4xl text-text-primary mb-4">
         {title}
