@@ -30,13 +30,9 @@ export default function Hero() {
             </div>
           )}
 
-          {/* Greeting */}
-          <p className="font-mono text-sm mb-5" style={{ color: "#a0a0c0" }}>
-            Hi, I&apos;m
-          </p>
-
-          {/* Name */}
-          <h1 className="font-display font-extrabold leading-none mb-5" style={{ fontSize: "clamp(3.5rem, 9vw, 7rem)" }}>
+          {/* Name — fixed to single line, controlled size */}
+          <h1 className="font-display font-extrabold leading-none mb-4 whitespace-nowrap"
+            style={{ fontSize: "clamp(2.8rem, 6.5vw, 5.5rem)" }}>
             <span style={{ color: "#f0f0ff" }}>Krishnendu </span>
             <span style={{
               background: "linear-gradient(135deg, #a78bfa 0%, #6366f1 50%, #ec4899 100%)",
@@ -46,8 +42,9 @@ export default function Hero() {
             }}>S</span>
           </h1>
 
-          {/* Role */}
-          <p className="font-display font-semibold text-2xl md:text-3xl mb-8" style={{ color: "#c0c0e0" }}>
+          {/* Role — styled with accent colour for contrast */}
+          <p className="font-display font-semibold text-xl md:text-2xl mb-8 tracking-wide"
+            style={{ color: "#a78bfa" }}>
             Software Development Engineer
           </p>
 
@@ -93,7 +90,7 @@ export default function Hero() {
             ))}
           </div>
 
-          {/* Social icons — kept */}
+          {/* Social icons */}
           <div className="flex items-center gap-3">
             <a
               href={siteConfig.github}
