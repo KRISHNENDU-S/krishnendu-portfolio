@@ -1,69 +1,91 @@
-import Link from "next/link";
-import { Github, Linkedin, Download, ArrowDown, Code2, FileText } from "lucide-react";
+import { Github, Linkedin, Code2 } from "lucide-react";
 import { siteConfig } from "@/lib/config";
 
 export default function Hero() {
   return (
     <section className="relative min-h-screen flex items-center px-6 overflow-hidden">
+
+      {/* Background glow orbs */}
       <div
-        className="absolute top-1/4 left-1/4 w-96 h-96 rounded-full pointer-events-none"
-        style={{ background: "radial-gradient(circle, rgba(99, 102, 241, 0.08) 0%, transparent 70%)" }}
+        className="absolute top-1/4 left-1/3 w-[500px] h-[500px] rounded-full pointer-events-none"
+        style={{ background: "radial-gradient(circle, rgba(99,102,241,0.10) 0%, transparent 70%)" }}
         aria-hidden="true"
       />
       <div
-        className="absolute bottom-1/4 right-1/4 w-64 h-64 rounded-full pointer-events-none"
-        style={{ background: "radial-gradient(circle, rgba(167, 139, 250, 0.05) 0%, transparent 70%)" }}
+        className="absolute bottom-1/3 right-1/4 w-72 h-72 rounded-full pointer-events-none"
+        style={{ background: "radial-gradient(circle, rgba(236,72,153,0.06) 0%, transparent 70%)" }}
         aria-hidden="true"
       />
 
-      <div className="max-w-6xl mx-auto w-full pt-24">
-        <div className="max-w-3xl">
+      <div className="max-w-6xl mx-auto w-full pt-28 pb-16">
+        <div className="max-w-4xl">
 
-          {/* Status */}
+          {/* Availability pill */}
           {siteConfig.availableForWork && (
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-emerald-500/20 bg-emerald-500/5 mb-8">
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-emerald-500/25 bg-emerald-500/8 mb-10">
               <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" aria-hidden="true" />
-              <span className="font-mono text-xs text-emerald-400">
+              <span className="font-mono text-xs text-emerald-400 tracking-wide">
                 Open to SDE / Backend / Full-Stack roles
               </span>
             </div>
           )}
 
-          <p className="font-mono text-sm text-text-muted mb-4">Hi, I&apos;m</p>
-
-          <h1 className="font-display font-extrabold text-5xl md:text-7xl text-text-primary leading-none mb-4">
-            <span>Krishnendu </span>
-            <span className="text-gradient">S</span>
-          </h1>
-
-          <p className="font-display text-xl md:text-2xl text-text-secondary mb-6">
-            {siteConfig.role}
+          {/* Greeting */}
+          <p className="font-mono text-sm mb-5" style={{ color: "#a0a0c0" }}>
+            Hi, I&apos;m
           </p>
 
-          {/* Strengthened description — 3 punchy lines */}
-          <div className="flex flex-col gap-2 mb-8 max-w-xl">
-            <p className="text-base text-text-primary leading-relaxed">
-              SDE at <span className="text-accent-secondary font-medium">Oracle</span> — building microservices, REST APIs, and AI-powered systems that run in production.
+          {/* Name */}
+          <h1 className="font-display font-extrabold leading-none mb-5" style={{ fontSize: "clamp(3.5rem, 9vw, 7rem)" }}>
+            <span style={{ color: "#f0f0ff" }}>Krishnendu </span>
+            <span style={{
+              background: "linear-gradient(135deg, #a78bfa 0%, #6366f1 50%, #ec4899 100%)",
+              WebkitBackgroundClip: "text",
+              WebkitTextFillColor: "transparent",
+              backgroundClip: "text"
+            }}>S</span>
+          </h1>
+
+          {/* Role */}
+          <p className="font-display font-semibold text-2xl md:text-3xl mb-8" style={{ color: "#c0c0e0" }}>
+            Software Development Engineer
+          </p>
+
+          {/* Punchy 3-line description */}
+          <div className="flex flex-col gap-4 mb-10 max-w-2xl">
+            <p className="text-lg leading-relaxed font-sans" style={{ color: "#d0d0f0" }}>
+              I don&apos;t just write code —{" "}
+              <span style={{ color: "#a78bfa", fontWeight: 600 }}>I engineer systems that matter.</span>{" "}
+              SDE at Oracle, building production microservices, REST APIs, and AI-driven platforms used by real users at scale.
             </p>
-            <p className="text-base text-text-secondary leading-relaxed">
-              Author of <span className="text-accent-secondary font-medium">3 IEEE-published papers</span> across emergency systems, deep learning, and healthcare ML.
+            <p className="text-base leading-relaxed font-sans" style={{ color: "#9090b8" }}>
+              <span style={{ color: "#f472b6", fontWeight: 600 }}>3× IEEE-published researcher</span> — my work spans real-time emergency systems, deep learning architectures, and healthcare ML. Research that doesn&apos;t just sit on paper — it&apos;s been built and shipped.
             </p>
-            <p className="text-base text-text-secondary leading-relaxed">
-              B.Tech CSE · Amrita Vishwa Vidyapeetham · <span className="text-accent-secondary font-medium">CGPA 9.5 / 10 · Rank 6th in batch.</span>
+            <p className="text-base leading-relaxed font-sans" style={{ color: "#9090b8" }}>
+              B.Tech CSE · Amrita Vishwa Vidyapeetham ·{" "}
+              <span style={{ color: "#34d399", fontWeight: 600 }}>CGPA 9.5 / 10</span>
+              {" "}·{" "}
+              <span style={{ color: "#34d399", fontWeight: 600 }}>Rank 6th in batch.</span>{" "}
+              Built for impact, not just employment.
             </p>
           </div>
 
-          {/* Quick stat pills */}
-          <div className="flex flex-wrap gap-2 mb-10">
+          {/* Stat pills */}
+          <div className="flex flex-wrap gap-2.5 mb-10">
             {[
-              { label: "Oracle SDE", icon: "💼" },
-              { label: "3× IEEE Published", icon: "📄" },
-              { label: "CGPA 9.5", icon: "🎓" },
-              { label: "Hyderabad, India", icon: "📍" },
+              { label: "Oracle SDE", icon: "💼", color: "#fbbf24" },
+              { label: "3× IEEE Published", icon: "📄", color: "#a78bfa" },
+              { label: "CGPA 9.5 / 10", icon: "🎓", color: "#34d399" },
+              { label: "Hyderabad, India", icon: "📍", color: "#60a5fa" },
             ].map((stat) => (
               <span
                 key={stat.label}
-                className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full border border-bg-border bg-bg-card font-mono text-xs text-text-secondary"
+                className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full font-mono text-xs font-medium"
+                style={{
+                  border: `1px solid ${stat.color}30`,
+                  background: `${stat.color}0d`,
+                  color: stat.color,
+                }}
               >
                 <span>{stat.icon}</span>
                 {stat.label}
@@ -71,45 +93,37 @@ export default function Hero() {
             ))}
           </div>
 
-          {/* CTAs */}
-          <div className="flex flex-wrap items-center gap-4">
+          {/* Social icons — kept */}
+          <div className="flex items-center gap-3">
             <a
-              href={siteConfig.resumeUrl}
-              download
-              className="inline-flex items-center gap-2 px-6 py-3 bg-accent-primary text-white text-sm font-mono font-medium rounded hover:bg-indigo-500 transition-colors"
+              href={siteConfig.github}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-2.5 rounded-lg border border-bg-border text-text-muted hover:text-white hover:border-accent-primary/50 transition-all"
+              aria-label="GitHub"
             >
-              <Download size={14} />
-              Download Resume
+              <Github size={18} />
             </a>
-
-            <Link
-              href="#projects"
-              className="inline-flex items-center gap-2 px-6 py-3 border border-bg-border text-text-secondary text-sm font-mono rounded hover:border-accent-primary hover:text-text-primary transition-all"
+            <a
+              href={siteConfig.linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-2.5 rounded-lg border border-bg-border text-text-muted hover:text-white hover:border-accent-primary/50 transition-all"
+              aria-label="LinkedIn"
             >
-              <FileText size={14} />
-              View Projects
-            </Link>
-
-            <div className="flex items-center gap-3 ml-2">
-              <a href={siteConfig.github} target="_blank" rel="noopener noreferrer"
-                className="p-2 text-text-muted hover:text-text-primary border border-bg-border rounded hover:border-accent-primary/40 transition-colors" aria-label="GitHub">
-                <Github size={16} />
-              </a>
-              <a href={siteConfig.linkedin} target="_blank" rel="noopener noreferrer"
-                className="p-2 text-text-muted hover:text-text-primary border border-bg-border rounded hover:border-accent-primary/40 transition-colors" aria-label="LinkedIn">
-                <Linkedin size={16} />
-              </a>
-              <a href={siteConfig.leetcode} target="_blank" rel="noopener noreferrer"
-                className="p-2 text-text-muted hover:text-text-primary border border-bg-border rounded hover:border-accent-primary/40 transition-colors" aria-label="LeetCode">
-                <Code2 size={16} />
-              </a>
-            </div>
+              <Linkedin size={18} />
+            </a>
+            <a
+              href={siteConfig.leetcode}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-2.5 rounded-lg border border-bg-border text-text-muted hover:text-white hover:border-accent-primary/50 transition-all"
+              aria-label="LeetCode"
+            >
+              <Code2 size={18} />
+            </a>
           </div>
 
-          <div className="mt-20 flex items-center gap-3 text-text-muted">
-            <ArrowDown size={14} className="animate-bounce" aria-hidden="true" />
-            <span className="font-mono text-xs">Scroll to explore</span>
-          </div>
         </div>
       </div>
     </section>

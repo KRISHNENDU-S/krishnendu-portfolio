@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { Menu, X, Terminal } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { siteConfig } from "@/lib/config";
 
 const navLinks = [
@@ -34,43 +34,26 @@ export default function Navbar() {
       }`}
     >
       <nav className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
-        {/* Logo */}
+        {/* Logo — name only, no icon */}
         <Link
           href="/"
-          className="flex items-center gap-2 font-display font-bold text-lg text-text-primary hover:text-accent-secondary transition-colors"
+          className="font-display font-bold text-base text-text-primary hover:text-accent-secondary transition-colors tracking-wide"
         >
-          <Terminal
-            size={18}
-            className="text-accent-primary"
-            aria-hidden="true"
-          />
-          <span className="font-mono text-sm text-accent-primary">~/</span>
-          <span className="font-display text-base">
-            {siteConfig.name.split(" ")[0].toLowerCase()}
-          </span>
+          {siteConfig.name.split(" ")[0].toLowerCase()}
         </Link>
 
-        {/* Desktop Nav */}
+        {/* Desktop Nav — links only, no Resume button */}
         <ul className="hidden md:flex items-center gap-8">
           {navLinks.map((link) => (
             <li key={link.href}>
               <Link
                 href={link.href}
-                className="font-mono text-xs text-text-secondary hover:text-text-primary transition-colors tracking-wider uppercase"
+                className="font-mono text-xs text-text-secondary hover:text-white transition-colors tracking-wider uppercase"
               >
                 {link.label}
               </Link>
             </li>
           ))}
-          <li>
-            <a
-              href={siteConfig.resumeUrl}
-              download
-              className="px-4 py-2 text-xs font-mono font-medium border border-accent-primary text-accent-primary rounded hover:bg-accent-primary hover:text-white transition-all duration-200 tracking-wider"
-            >
-              Resume
-            </a>
-          </li>
         </ul>
 
         {/* Mobile Toggle */}
@@ -99,15 +82,6 @@ export default function Navbar() {
                 </Link>
               </li>
             ))}
-            <li className="pt-2">
-              <a
-                href={siteConfig.resumeUrl}
-                download
-                className="inline-block px-4 py-2 text-xs font-mono border border-accent-primary text-accent-primary rounded hover:bg-accent-primary hover:text-white transition-all duration-200"
-              >
-                Download Resume
-              </a>
-            </li>
           </ul>
         </div>
       )}
