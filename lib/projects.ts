@@ -6,6 +6,7 @@ export interface Project {
   githubUrl: string;
   liveUrl?: string;
   publicationUrl?: string;
+  certUrl?: string;
   featured: boolean;
   category: "AI" | "Backend" | "Fullstack" | "ML";
 }
@@ -19,6 +20,7 @@ export const projects: Project[] = [
     techStack: ["Flutter", "Firebase", "Real-time DB", "Push Notifications"],
     githubUrl: "https://github.com/KRISHNENDU-S",
     publicationUrl: "https://ieeexplore.ieee.org/abstract/document/11005046",
+    certUrl: "/cert-emergify.jpg",
     featured: true,
     category: "Fullstack",
   },
@@ -36,9 +38,10 @@ export const projects: Project[] = [
     id: "bci-hand-movement",
     title: "Brain-Computer Interface",
     description:
-      "Interpretable ML solution using Python MNE to analyze EEG signals for accurate hand-grasp movement detection. Contributed ~70% to model development and ~90% to analysis.",
+      "Internship at Amrita Mind Brain Center. Interpretable ML solution using Python MNE to analyze EEG signals for accurate hand-grasp movement detection. Contributed ~70% to model development and ~90% to analysis.",
     techStack: ["Python", "MNE", "EEG Signal Processing", "Machine Learning", "Explainability"],
     githubUrl: "https://github.com/KRISHNENDU-S",
+    certUrl: "/cert-bci.jpg",
     featured: false,
     category: "ML",
   },
@@ -46,10 +49,11 @@ export const projects: Project[] = [
     id: "age-gender-prediction",
     title: "Age & Gender Prediction",
     description:
-      "Deep learning models with TensorFlow reducing computational cost by 25% while maintaining ~85% accuracy. Published in IEEE.",
+      "Deep learning models with TensorFlow reducing computational cost by 25% while maintaining ~85% accuracy. Published in IEEE ICCCNT 2024, IIT-Mandi.",
     techStack: ["Python", "TensorFlow", "Deep Learning", "CNNs"],
     githubUrl: "https://github.com/KRISHNENDU-S",
     publicationUrl: "https://ieeexplore.ieee.org/abstract/document/10724502",
+    certUrl: "/cert-age-gender.jpg",
     featured: false,
     category: "ML",
   },
@@ -57,10 +61,11 @@ export const projects: Project[] = [
     id: "heart-failure-prediction",
     title: "Heart Failure Prediction",
     description:
-      "ML models using Python and Keras on healthcare datasets. Improved predictive performance and decision-making efficiency by ~50% through enhanced model selection. Published in IEEE.",
+      "ML models using Python and Keras on healthcare datasets. Improved predictive performance by ~50% through enhanced model selection. Published in IEEE ICCCNT 2024, IIT-Mandi.",
     techStack: ["Python", "Keras", "ML", "Feature Engineering", "Healthcare Data"],
     githubUrl: "https://github.com/KRISHNENDU-S",
     publicationUrl: "https://ieeexplore.ieee.org/abstract/document/10724418",
+    certUrl: "/cert-heart-failure.jpg",
     featured: false,
     category: "ML",
   },

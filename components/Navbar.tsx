@@ -8,8 +8,11 @@ import { siteConfig } from "@/lib/config";
 const navLinks = [
   { href: "#projects", label: "Projects" },
   { href: "#experience", label: "Experience" },
+  { href: "#education", label: "Education" },
+  { href: "#research", label: "Research" },
   { href: "#skills", label: "Skills" },
   { href: "#certifications", label: "Certifications" },
+  { href: "#volunteering", label: "Volunteering" },
   { href: "#contact", label: "Contact" },
 ];
 
@@ -34,7 +37,6 @@ export default function Navbar() {
       }`}
     >
       <nav className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
-        {/* Logo — name only, no icon */}
         <Link
           href="/"
           className="font-display font-bold text-base text-text-primary hover:text-accent-secondary transition-colors tracking-wide"
@@ -42,8 +44,8 @@ export default function Navbar() {
           {siteConfig.name.split(" ")[0].toLowerCase()}
         </Link>
 
-        {/* Desktop Nav — links only, no Resume button */}
-        <ul className="hidden md:flex items-center gap-8">
+        {/* Desktop Nav */}
+        <ul className="hidden md:flex items-center gap-6">
           {navLinks.map((link) => (
             <li key={link.href}>
               <Link
