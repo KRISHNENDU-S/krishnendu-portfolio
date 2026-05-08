@@ -10,7 +10,7 @@ export default function Contact() {
         <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-8">
           <div>
             <p className="font-mono text-[10px] text-accent-primary uppercase tracking-widest mb-1">
-              // get in touch
+              {`// get in touch`}
             </p>
             <h2 className="font-display font-bold text-2xl text-text-primary">
               Let&apos;s Work Together
