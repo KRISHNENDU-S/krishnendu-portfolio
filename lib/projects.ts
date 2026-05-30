@@ -4,14 +4,38 @@ export interface Project {
   description: string;
   techStack: string[];
   githubUrl: string;
+  showGithub?: boolean;
   liveUrl?: string;
   publicationUrl?: string;
-  certUrl?: string;
   featured: boolean;
   category: "AI" | "Backend" | "Fullstack" | "ML";
 }
 
 export const projects: Project[] = [
+  {
+    id: "bus-charging-scheduler",
+    title: "Bus Charging Scheduler",
+    description:
+      "Scheduling system for 20 electric buses on the Bengaluru–Kochi corridor across 4 charging stations. Event-driven greedy engine with a pluggable cost function, three tunable optimization weights (individual fairness, operator fairness, network efficiency), and an extensible rule registry — adding a new rule is one file and one line.",
+    techStack: ["Python", "Streamlit", "Greedy Algorithms", "Event-Driven", "JSON"],
+    githubUrl: "https://github.com/KRISHNENDU-S/bus-charging-scheduler",
+    showGithub: true,
+    liveUrl: "https://bus-charging-scheduler-aytsjp67mn6gpupbin6wmx.streamlit.app",
+    featured: true,
+    category: "Backend",
+  },
+  {
+    id: "leafmark",
+    title: "LeafMark",
+    description:
+      "Private, distraction-free reading log with no social layer — just your books. Full-stack app with CRUD, genre tagging via a normalized join table, status tracking, 1–5 ratings, search and filter, and secure JWT auth using Argon2 hashing and httpOnly cookies to prevent XSS token theft.",
+    techStack: ["React", "Node.js", "Express", "PostgreSQL", "JWT", "Argon2", "Tailwind CSS", "Vite"],
+    githubUrl: "https://github.com/KRISHNENDU-S/LeafMark",
+    showGithub: true,
+    liveUrl: "https://leaf-mark.vercel.app",
+    featured: true,
+    category: "Fullstack",
+  },
   {
     id: "emergify",
     title: "EMERGIFY",
@@ -20,7 +44,6 @@ export const projects: Project[] = [
     techStack: ["Flutter", "Firebase", "Real-time DB", "Push Notifications"],
     githubUrl: "https://github.com/KRISHNENDU-S",
     publicationUrl: "https://ieeexplore.ieee.org/abstract/document/11005046",
-    certUrl: "/cert-emergify.jpg",
     featured: true,
     category: "Fullstack",
   },
@@ -38,10 +61,9 @@ export const projects: Project[] = [
     id: "bci-hand-movement",
     title: "Brain-Computer Interface",
     description:
-      "Internship at Amrita Mind Brain Center. Interpretable ML solution using Python MNE to analyze EEG signals for accurate hand-grasp movement detection. Contributed ~70% to model development and ~90% to analysis.",
+      "Interpretable ML solution using Python MNE to analyze EEG signals for accurate hand-grasp movement detection. Contributed ~70% to model development and ~90% to analysis.",
     techStack: ["Python", "MNE", "EEG Signal Processing", "Machine Learning", "Explainability"],
     githubUrl: "https://github.com/KRISHNENDU-S",
-    certUrl: "/cert-bci.jpg",
     featured: false,
     category: "ML",
   },
@@ -49,11 +71,10 @@ export const projects: Project[] = [
     id: "age-gender-prediction",
     title: "Age & Gender Prediction",
     description:
-      "Deep learning models with TensorFlow reducing computational cost by 25% while maintaining ~85% accuracy. Published in IEEE ICCCNT 2024, IIT-Mandi.",
+      "Deep learning models with TensorFlow reducing computational cost by 25% while maintaining ~85% accuracy. Published in IEEE.",
     techStack: ["Python", "TensorFlow", "Deep Learning", "CNNs"],
     githubUrl: "https://github.com/KRISHNENDU-S",
     publicationUrl: "https://ieeexplore.ieee.org/abstract/document/10724502",
-    certUrl: "/cert-age-gender.jpg",
     featured: false,
     category: "ML",
   },
@@ -61,11 +82,10 @@ export const projects: Project[] = [
     id: "heart-failure-prediction",
     title: "Heart Failure Prediction",
     description:
-      "ML models using Python and Keras on healthcare datasets. Improved predictive performance by ~50% through enhanced model selection. Published in IEEE ICCCNT 2024, IIT-Mandi.",
+      "ML models using Python and Keras on healthcare datasets. Improved predictive performance and decision-making efficiency by ~50% through enhanced model selection. Published in IEEE.",
     techStack: ["Python", "Keras", "ML", "Feature Engineering", "Healthcare Data"],
     githubUrl: "https://github.com/KRISHNENDU-S",
     publicationUrl: "https://ieeexplore.ieee.org/abstract/document/10724418",
-    certUrl: "/cert-heart-failure.jpg",
     featured: false,
     category: "ML",
   },
