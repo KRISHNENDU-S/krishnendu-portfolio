@@ -37,6 +37,17 @@ export const projects: Project[] = [
     category: "Fullstack",
   },
   {
+    id: "brahmo-governance",
+    title: "BRAHMO Governance Engine",
+    description:
+      "Governance system for hospital AI knowledge infrastructure — built as part of a backend developer assessment. When a base clinical protocol changes, the cascade invalidation engine walks the knowledge graph (BFS) and flags every derived rule for human review. Includes a live 4-dimension health score (Coverage, Freshness, Balance, Consistency), a department-aware notification router, and a state-machine-validated review loop. Fully deterministic — zero LLM.",
+    techStack: ["Python", "FastAPI", "PostgreSQL", "Supabase", "React", "Tailwind CSS", "psycopg"],
+    githubUrl: "https://github.com/KRISHNENDU-S/brahmo-governance",
+    showGithub: true,
+    featured: true,
+    category: "Backend",
+  },
+  {
     id: "emergify",
     title: "EMERGIFY",
     description:
