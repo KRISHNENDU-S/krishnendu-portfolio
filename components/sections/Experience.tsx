@@ -6,7 +6,7 @@ const experiences = [
   {
     role: "Associate Software Developer",
     company: "Oracle",
-    period: "08/2025 – 03/2026",
+    period: "07/2025 – 04/2026",
     location: "Hyderabad",
     color: "#f97316",
     highlights: [
