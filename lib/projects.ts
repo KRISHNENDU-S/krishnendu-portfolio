@@ -28,7 +28,7 @@ export const projects: Project[] = [
     id: "leafmark",
     title: "LeafMark",
     description:
-      "Private reading log with no social layer — just your books. Full-stack app with secure JWT auth (Argon2 + httpOnly cookies), normalized genre join table, full CRUD, search, and filter. Phase 1.1: 16 Cypress E2E test scenarios written in Gherkin BDD with data-testid selectors, running automatically in a GitHub Actions CI/CD pipeline on every push — nothing merges to master without the tests passing.",
+      "Private reading log built without a social layer — designed for focus, not engagement. Implements secure JWT auth with Argon2id hashing and httpOnly cookies, normalized genre relationships via a join table, and full CRUD with search and filter across a PostgreSQL backend. \n\n Production-grade test infrastructure — 16 Cypress E2E scenarios authored in Gherkin BDD, instrumented with data-testid selectors, and integrated into a GitHub Actions pipeline that gates every push and pull request to master.",
     techStack: ["React", "Node.js", "Express", "PostgreSQL", "JWT", "Argon2", "Cypress", "GitHub Actions", "Tailwind CSS", "Vite"],
     githubUrl: "https://github.com/KRISHNENDU-S/LeafMark",
     showGithub: true,
