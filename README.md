@@ -1,6 +1,10 @@
-# Developer Portfolio — Next.js 15
+# Krishnendu S — Developer Portfolio
 
-A production-ready developer portfolio built with Next.js 15 (App Router), TypeScript, and Tailwind CSS.
+Personal portfolio site built with Next.js 15, TypeScript, and Tailwind CSS. Showcases professional experience at Oracle, IEEE-published research, and selected projects.
+
+**Live:** https://krishnendus-portfolio.vercel.app
+
+---
 
 ## Stack
 
@@ -8,6 +12,7 @@ A production-ready developer portfolio built with Next.js 15 (App Router), TypeS
 - **Language**: TypeScript
 - **Styling**: Tailwind CSS + CSS Variables
 - **Icons**: Lucide React
+- **Fonts**: Syne (display), DM Sans (body), JetBrains Mono (mono)
 - **Deployment**: Vercel
 
 ---
@@ -17,133 +22,102 @@ A production-ready developer portfolio built with Next.js 15 (App Router), TypeS
 ```
 portfolio/
 ├── app/
-│   ├── layout.tsx          # Root layout + SEO metadata
-│   └── page.tsx            # Home page (assembles all sections)
+│   ├── layout.tsx              # Root layout + SEO metadata
+│   └── page.tsx                # Home page (assembles all sections)
 ├── components/
 │   ├── sections/
-│   │   ├── Hero.tsx        # Landing section
-│   │   ├── Projects.tsx    # Project cards grid
-│   │   ├── Skills.tsx      # Categorized skill badges
-│   │   ├── GitHubStats.tsx # GitHub stats via API
-│   │   └── Contact.tsx     # Contact form + links
-│   ├── Button.tsx          # Reusable button (button/anchor)
-│   ├── Footer.tsx          # Site footer
-│   ├── Navbar.tsx          # Responsive sticky nav
-│   ├── ProjectCard.tsx     # Project display card
-│   ├── SectionHeading.tsx  # Section title + label
-│   └── SectionWrapper.tsx  # Section layout wrapper
+│   │   ├── Hero.tsx            # Landing — name, bio, stat pills, social links
+│   │   ├── Projects.tsx        # Featured + other project cards
+│   │   ├── Experience.tsx      # Work timeline + IEEE publications + education
+│   │   ├── Skills.tsx          # Categorised skill badges with proficiency levels
+│   │   ├── Certifications.tsx  # Verified credentials grid
+│   │   └── Contact.tsx         # Contact info + volunteering & leadership cards
+│   ├── Button.tsx              # Reusable button (renders as <button> or <a>)
+│   ├── Footer.tsx              # Site footer
+│   ├── Navbar.tsx              # Responsive sticky nav
+│   ├── ProjectCard.tsx         # Project display card (IEEE paper + Live Demo links)
+│   ├── SectionHeading.tsx      # Section title + label
+│   └── SectionWrapper.tsx      # Section layout wrapper
 ├── lib/
-│   ├── config.ts           # Site-wide configuration
-│   ├── projects.ts         # Project data
-│   ├── skills.ts           # Skills data
-│   └── utils.ts            # Utility functions (cn)
+│   ├── config.ts               # Site-wide configuration (name, links, email)
+│   ├── projects.ts             # Project data
+│   ├── skills.ts               # Skills data
+│   └── utils.ts                # cn() utility
 ├── styles/
-│   └── globals.css         # Global styles + font imports
+│   └── globals.css             # Global styles, CSS variables, font imports
 ├── public/
-│   └── resume.pdf          # Your resume (add this)
+│   ├── profile.jpg             # Profile photo
+│   └── resume.pdf              # Resume
 ├── next.config.ts
 ├── tailwind.config.ts
 ├── tsconfig.json
-├── vercel.json
 └── package.json
 ```
 
 ---
 
-## Customization
+## Section Order
 
-### 1. Personal Info — `lib/config.ts`
-Update your name, role, email, GitHub/LinkedIn URLs, and location.
+Hero → Projects → Experience → Skills → Certifications → Contact
 
-### 2. Projects — `lib/projects.ts`
-Add or remove entries in the `projects` array. Each project has:
+---
+
+## Customisation
+
+### Personal Info — `lib/config.ts`
+Update name, role, email, GitHub/LinkedIn/LeetCode URLs, and location.
+
+### Projects — `lib/projects.ts`
+Add or edit entries in the `projects` array. Each project has:
 - `title`, `description`, `techStack[]`
-- `githubUrl`, optional `liveUrl`
-- `featured: boolean` — featured projects appear larger
-- `category`: `"AI" | "Backend" | "Fullstack" | "Tool"`
+- `githubUrl`, optional `liveUrl`, optional `publicationUrl`
+- `featured: boolean` — featured projects appear in the larger top grid
+- `category`: `"AI" | "Backend" | "Fullstack" | "ML"`
 
-### 3. Skills — `lib/skills.ts`
-Edit `skillCategories` to reflect your actual skills. Levels: `expert | proficient | familiar`.
+### Skills — `lib/skills.ts`
+Edit `skillCategories` to reflect your stack. Proficiency levels: `expert | proficient | familiar`.
 
-### 4. Resume
-Drop your PDF into `public/resume.pdf`.
+### Certifications — `components/sections/Certifications.tsx`
+Edit the `certifications` array directly in the component.
+
+### Availability pill — `lib/config.ts`
+Set `availableForWork: true | false` to toggle the "Open to roles" pill in the Hero.
 
 ---
 
 ## Run Locally
 
 ```bash
-# Install dependencies
 npm install
-
-# Start dev server
 npm run dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000)
 
-### Other commands
-
 ```bash
 npm run build        # Production build
-npm run start        # Start production server
 npm run lint         # ESLint
-npm run type-check   # TypeScript check
 ```
 
 ---
 
-## Deploy to Vercel
+## Deploy
 
-### Option A — Vercel CLI
+Auto-deploys on every push to `main` via Vercel GitHub integration.
+
+To deploy manually:
 
 ```bash
-# Install Vercel CLI
 npm i -g vercel
-
-# Deploy
-vercel
-
-# Production deploy
 vercel --prod
 ```
 
-### Option B — GitHub Integration (Recommended)
-
-1. Push this repo to GitHub
-2. Go to [vercel.com](https://vercel.com) → **Add New Project**
-3. Import your GitHub repository
-4. Vercel auto-detects Next.js — click **Deploy**
-5. Done. Every push to `main` auto-deploys.
-
-### Environment Variables (if needed)
-Set these in Vercel Dashboard → Project → Settings → Environment Variables:
-```
-# If you add a contact form backend (e.g. Formspree)
-NEXT_PUBLIC_FORMSPREE_ID=your_form_id
-```
-
 ---
 
-## Performance Notes
+## Design Notes
 
-- All pages are **statically generated** at build time
-- Next.js `Image` component handles image optimization automatically
-- Fonts are loaded via Google Fonts with `display=swap`
-- No heavy animation libraries — CSS transitions only
-- GitHub Stats images are loaded with `unoptimized` to bypass CDN caching issues
-
----
-
-## Contact Form (Production)
-
-The contact form currently simulates submission. To wire it up:
-
-1. **Formspree** (easiest): Create a form at formspree.io, get your endpoint, POST to `https://formspree.io/f/YOUR_ID`
-2. **Resend + API Route**: Create `app/api/contact/route.ts` and use the Resend SDK
-
----
-
-## License
-
-MIT
+- Dark theme: `#0a0a0f` background, `#111122` cards
+- Accent colours: indigo `#6366f1`, violet `#a78bfa`, pink `#f472b6`, green `#34d399`
+- No contact form — Contact section uses static links and volunteering cards
+- No GitHub code links on project cards — only IEEE paper and Live Demo where applicable
+- All pages statically generated at build time; no server-side data fetching

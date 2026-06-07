@@ -28,8 +28,8 @@ export const projects: Project[] = [
     id: "leafmark",
     title: "LeafMark",
     description:
-      "Private reading log built without a social layer — designed for focus, not engagement. Implements secure JWT auth with Argon2id hashing and httpOnly cookies, normalized genre relationships via a join table, and full CRUD with search and filter across a PostgreSQL backend. \n\n Production-grade test infrastructure — 16 Cypress E2E scenarios authored in Gherkin BDD, instrumented with data-testid selectors, and integrated into a GitHub Actions pipeline that gates every push and pull request to master.",
-    techStack: ["React", "Node.js", "Express", "PostgreSQL", "JWT", "Argon2", "Cypress", "GitHub Actions", "Tailwind CSS", "Vite"],
+"Private reading log built without a social layer — designed for focus, not engagement. Implements secure JWT auth with Argon2id hashing and httpOnly cookies, normalized genre relationships via a join table, and full CRUD with search and filter across a PostgreSQL backend. Backed by 16 Cypress E2E scenarios in Gherkin BDD gating every push to master via GitHub Actions, and an LLM-powered recommendation engine that calls Gemini server-side and returns structured JSON — API key never touches the frontend.",
+    techStack: ["React", "Node.js", "Express", "PostgreSQL", "JWT", "Argon2", "Cypress", "GitHub Actions", "Tailwind CSS", "Vite","Gemini API", "react-markdown"],
     githubUrl: "https://github.com/KRISHNENDU-S/LeafMark",
     showGithub: true,
     liveUrl: "https://leaf-mark.vercel.app",
