@@ -19,17 +19,33 @@ export default function Hero() {
       />
 
       <div className="max-w-6xl mx-auto w-full pt-28 pb-16">
-        <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20 w-full">
+        <div className="flex flex-col lg:flex-row items-center gap-10 lg:gap-20 w-full">
 
-          {/* LEFT — all text content */}
-          <div className="flex-1 min-w-0">
+          {/* Photo — top on mobile/tablet, right on laptop */}
+          <div className="flex-shrink-0 flex items-center justify-center lg:order-2">
+            <div
+              className="relative w-[180px] h-[220px] sm:w-[220px] sm:h-[270px] lg:w-[260px] lg:h-[320px] rounded-2xl overflow-hidden border border-bg-border"
+              style={{ boxShadow: "0 0 48px rgba(99,102,241,0.18)" }}
+            >
+              <Image
+                src="/profile.jpg"
+                alt="Krishnendu S"
+                fill
+                className="object-cover"
+                priority
+              />
+            </div>
+          </div>
+
+          {/* Text content — below photo on mobile/tablet, left on laptop */}
+          <div className="flex-1 min-w-0 lg:order-1">
 
             {/* Availability pill */}
             {siteConfig.availableForWork && (
               <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-emerald-500/25 bg-emerald-500/8 mb-10">
                 <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" aria-hidden="true" />
                 <span className="font-mono text-xs text-emerald-400 tracking-wide">
-                 Open to SDE / Full-Stack / AI · ML Engineering roles
+                  Open to SDE / Full-Stack / AI · ML Engineering roles
                 </span>
               </div>
             )}
@@ -37,7 +53,7 @@ export default function Hero() {
             {/* Name */}
             <h1
               className="font-display font-extrabold leading-none mb-4 whitespace-nowrap"
-              style={{ fontSize: "clamp(2.8rem, 6.5vw, 5.5rem)" }}
+              style={{ fontSize: "clamp(2.2rem, 6.5vw, 5.5rem)" }}
             >
               <span style={{ color: "#f0f0ff" }}>Krishnendu </span>
               <span
@@ -54,7 +70,7 @@ export default function Hero() {
 
             {/* Role */}
             <p
-              className="font-display font-semibold text-xl md:text-2xl mb-8 tracking-wide"
+              className="font-display font-semibold text-lg md:text-2xl mb-8 tracking-wide"
               style={{ color: "#a78bfa" }}
             >
               Software Development Engineer
@@ -62,15 +78,15 @@ export default function Hero() {
 
             {/* Description */}
             <div className="flex flex-col gap-4 mb-10 max-w-2xl">
-              <p className="text-lg leading-relaxed font-sans" style={{ color: "#d0d0f0" }}>
+              <p className="text-base lg:text-lg leading-relaxed font-sans" style={{ color: "#d0d0f0" }}>
                 I don&apos;t just write code &mdash;{" "}
                 <span style={{ color: "#a78bfa", fontWeight: 600 }}>I engineer systems that matter.</span>{" "}
                 SDE at Oracle, building production microservices, REST APIs, and AI-driven platforms used by real users at scale.
               </p>
-              <p className="text-base leading-relaxed font-sans" style={{ color: "#9090b8" }}>
+              <p className="text-sm lg:text-base leading-relaxed font-sans" style={{ color: "#9090b8" }}>
                 <span style={{ color: "#f472b6", fontWeight: 600 }}>3&times; IEEE-published researcher</span> &mdash; my work spans real-time emergency systems, deep learning architectures, and healthcare ML. Research that doesn&apos;t just sit on paper &mdash; it&apos;s been built and shipped.
               </p>
-              <p className="text-base leading-relaxed font-sans" style={{ color: "#9090b8" }}>
+              <p className="text-sm lg:text-base leading-relaxed font-sans" style={{ color: "#9090b8" }}>
                 B.Tech CSE &middot; Amrita Vishwa Vidyapeetham &middot;{" "}
                 <span style={{ color: "#34d399", fontWeight: 600 }}>CGPA 9.5 / 10</span>
                 {" "}&middot;{" "}
@@ -134,23 +150,6 @@ export default function Hero() {
             </div>
 
           </div>
-
-          {/* RIGHT — profile photo */}
-          <div className="flex-shrink-0 hidden lg:flex items-center justify-center">
-            <div
-              className="relative w-[260px] h-[320px] rounded-2xl overflow-hidden border border-bg-border"
-              style={{ boxShadow: "0 0 48px rgba(99,102,241,0.18)" }}
-            >
-              <Image
-                src="/profile.jpg"
-                alt="Krishnendu S"
-                fill
-                className="object-cover"
-                priority
-              />
-            </div>
-          </div>
-
         </div>
       </div>
     </section>
