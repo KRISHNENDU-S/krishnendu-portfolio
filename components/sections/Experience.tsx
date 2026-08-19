@@ -4,6 +4,19 @@ import { Briefcase, MapPin, Calendar } from "lucide-react";
 
 const experiences = [
   {
+    role: "AI Engineer",
+    company: "Avira Digital",
+    period: "07/2026 – Present",
+    location: "Hyderabad",
+    color: "#10b981",
+    highlights: [
+      "Built a production LangChain DeepAgents transformer node with Tavily search and AzureChatOpenAI, replacing a UI-based internal agent in a pharma data pipeline",
+      "Implemented async concurrent execution with semaphore tuning, processing 100 rows in 3 minutes across an 11K-row production database within a hard 500s platform timeout",
+      "Delivered an AI tagging pipeline integrating LangChain DeepAgents with PostgreSQL read/write nodes and internet-augmented enrichment, handed over end-to-end within the first month",
+      "Led systematic evaluation of the LangChain DeepAgents framework: built a modular repo spanning config, middleware, skills, memory, and subagent layers, wrote 2 custom middleware, and documented 26 middleware across 4 categories via a Streamlit configurator UI",
+    ],
+  },
+  {
     role: "Associate Software Developer",
     company: "Oracle",
     period: "07/2025 – 04/2026",
@@ -46,10 +59,10 @@ export default function Experience() {
       <SectionHeading
         label="career"
         title="Work Experience"
-        subtitle="Professional experience building production systems at Oracle and beyond."
+        subtitle="Professional experience building production AI systems and software at Avira Digital, Oracle, and beyond."
       />
 
-      <div className="grid md:grid-cols-3 gap-6">
+      <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
         {experiences.map((exp, i) => (
           <div
             key={i}
